@@ -217,6 +217,8 @@ img {
     opacity: 1;
 }
 
+/* MEDIA */
+
 @media (max-width: 1050px) {
     .start-slider {
         width: 650px;
