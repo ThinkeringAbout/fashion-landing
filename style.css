@@ -223,15 +223,24 @@ img {
     .start-slider {
         width: 650px;
     }
+    .bg-img img {
+        left: 750px;
+    }
 }
 
 @media (max-width: 850px) {
     .logo {
         display: none;
     }
+    .bg-img img {
+        left: 650px;
+    }
 }
 
 @media (max-width: 690px) {
+    .bg-img img {
+        left: 480px;
+    }
     .start-slider {
         width: 400px;
     }
@@ -245,6 +254,9 @@ img {
 }
 
 @media (max-width: 520px) {
+    .bg-img img {
+        left: 300px;
+    }
     .secondary-text {
         font-size: 12px;
         width: 50%;
@@ -271,6 +283,9 @@ img {
 }
 
 @media (max-width: 420px) {
+    .bg-img img {
+        left: 210px;
+    }
     .start-slider {
         width: 290px;
     }
@@ -292,6 +307,9 @@ img {
 }
 
 @media (max-width: 350px) {
+    .bg-img img {
+        left: 170px;
+    }
     .btn:nth-child(2) {
         width: 40px;
         height: 30px;
