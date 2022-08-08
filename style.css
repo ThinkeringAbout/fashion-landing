@@ -364,6 +364,13 @@ h2 {
     .promo-slider {
         width: 900px;
     }
+    .trending-slider {
+        width: 900px;
+    }
+    .trending-img {
+        height: 502px;
+        width: 300px;
+    }
 
 }
 
@@ -383,6 +390,13 @@ h2 {
     }
     .promo-slider {
         width: 600px;
+    }
+    .trending-slider {
+        width: 600px;
+    }
+    .trending-img {
+        height: 402px;
+        width: 200px;
     }
 }
 
@@ -421,6 +435,16 @@ h2 {
     }
     .promo_slider_line {
         height: 70px;
+    }
+    .trending-slider {
+        width: 450px;
+    }
+    .trending-img {
+        height: 402px;
+        width: 150px;
+    }
+    .trending-slider-line {
+        height: 402px;
     }
 }
 
