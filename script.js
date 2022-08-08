@@ -45,8 +45,6 @@ function showMore () {
     }, 100);
 }
 
-showMoreBtn.onclick = showMore;
-
 function nextTrendingSlide () {
     let x = document.querySelector('.trending-img').width * 3 + 30;
     if (trendingOffset < x * 3 + 1) {
@@ -76,8 +74,6 @@ function prevTrendingSlide () {
         trendingIndications[trendingIndicationsIndex-1].classList.add('condition-active');
     }
 }
-
-
 
 function nextPromoSlide() {
     promoBtnRight.onclick = null;
@@ -195,3 +191,4 @@ promoBtnRight.onclick = nextPromoSlide;
 promoBtnLeft.onclick = prevPromoSlide;
 trendingBtnRight.onclick = nextTrendingSlide;
 trendingBtnLeft.onclick = prevTrendingSlide;
+showMoreBtn.onclick = showMore;
