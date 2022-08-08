@@ -20,24 +20,25 @@ let trendingIndicationsIndex = 0;
 
 let showMoreBtn = document.querySelector('.show-more-btn');
 let categoriesList = document.querySelector('.categories-images');
+let pics = document.querySelectorAll('.cat-image');
 
 function showLess () {
     showMoreBtn.onclick = null;
-    categoriesList.style.height = 920 + 'px';
+    document.querySelector('.categories').scrollIntoView({
+        behavior: 'smooth'
+    });
     setTimeout(function() {
-        showMoreBtn.scrollIntoView({
-            behavior: 'smooth'
-        });
+        categoriesList.style.height = 920 + 'px';
         showMoreBtn.onclick = showMore;
         showMoreBtn.innerHTML = "More Categories";
-    }, 10);
+    }, 1000);
 }
 
 function showMore () {
     showMoreBtn.onclick = null;
-    categoriesList.style.height = 'fit-content';
     setTimeout(function() {
-        showMoreBtn.scrollIntoView({
+        categoriesList.style.height = 'fit-content';
+        pics[pics.length - 1].scrollIntoView({
             behavior: 'smooth'
         });
         showMoreBtn.onclick = showLess;
