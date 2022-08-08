@@ -1,19 +1,60 @@
 let nextBtn = document.querySelector('.next-btn');
 let prevBtn = document.querySelector('.prev-btn');
+let slider = document.querySelector('.slider-line');
+let images = document.querySelectorAll('.slider-line img');
+let offset = -240;
+
 let promoBtnLeft = document.querySelector('.promo-left');
 let promoBtnRight = document.querySelector('.promo-right');
 let promoSlider = document.querySelector('.promo_slider_line');
-let slider = document.querySelector('.slider-line');
-let images = document.querySelectorAll('.slider-line img');
 let indications = document.querySelectorAll('.condition');
-let offset = -240;
 let promoOffset = 0;
 let indicationsIndex = 0;
 
+let trendingSlider = document.querySelector('.trending-slider-line');
+let trendingIndications = document.querySelectorAll('.condition-tr');
+let trendingBtnLeft = document.querySelector('.trending-left');
+let trendingBtnRight = document.querySelector('.trending-right');
+let trendingOffset = 0;
+let trendingIndicationsIndex = 0;
+
+function nextTrendingSlide () {
+    let x = document.querySelector('.trending-img').width * 3 + 30;
+    if (trendingOffset < x * 3 + 1) {
+        trendingOffset += x;
+        trendingSlider.style.right = trendingOffset + 'px';
+        for (let i = 0; i < trendingIndications.length - 1; i++) {
+            if (trendingIndications[i].classList.contains('condition-active')) {
+                trendingIndications[i].classList.remove('condition-active');
+                trendingIndicationsIndex = i;
+            }
+        }
+        trendingIndications[trendingIndicationsIndex+1].classList.add('condition-active');
+    }
+}
+
+function prevTrendingSlide () {
+    let x = document.querySelector('.trending-img').width * 3 + 30;
+    if (trendingOffset > 1) {
+        trendingOffset -= x;
+        trendingSlider.style.right = trendingOffset + 'px';
+        for (let i = trendingIndications.length - 1; i > 0; i--) {
+            if (trendingIndications[i].classList.contains('condition-active')) {
+                trendingIndications[i].classList.remove('condition-active');
+                trendingIndicationsIndex = i;
+            }
+        }
+        trendingIndications[trendingIndicationsIndex-1].classList.add('condition-active');
+    }
+}
+
+
+
 function nextPromoSlide() {
+    promoBtnRight.onclick = null;
+    promoBtnLeft.onclick = null;
     let x = document.querySelector('.slider-img').width * 5 + 50;
     if (promoOffset < x * 3 + 1) {
-        console.log(x);
         promoOffset += document.querySelector('.promo_slider_line img').width * 5 + 50;
         promoSlider.style.right = promoOffset + 'px';
         for (let i = 0; i < indications.length - 1; i++) {
@@ -24,6 +65,31 @@ function nextPromoSlide() {
         }
         indications[indicationsIndex+1].classList.add('condition-active');
     }
+    setTimeout(function() {
+        promoBtnRight.onclick = nextPromoSlide;
+        promoBtnLeft.onclick = prevPromoSlide;
+    }, 600);
+}
+
+function prevPromoSlide() {
+    promoBtnRight.onclick = null;
+    promoBtnLeft.onclick = null;
+    let x = document.querySelector('.slider-img').width * 5 + 50;
+    if (promoOffset > 1) {
+        promoOffset -= document.querySelector('.promo_slider_line img').width * 5 + 50;
+        promoSlider.style.right = promoOffset + 'px';
+        for (let i = indications.length - 1; i > 0; i--) {
+            if (indications[i].classList.contains('condition-active')) {
+                indications[i].classList.remove('condition-active');
+                indicationsIndex = i;
+            }
+        }
+        indications[indicationsIndex-1].classList.add('condition-active');
+    }
+    setTimeout(function() {
+        promoBtnRight.onclick = nextPromoSlide;
+        promoBtnLeft.onclick = prevPromoSlide;
+    }, 600);
 }
 
 function nextSlide() {
@@ -97,3 +163,6 @@ function backSlide() {
 nextBtn.onclick = nextSlide;
 prevBtn.onclick = backSlide;
 promoBtnRight.onclick = nextPromoSlide;
+promoBtnLeft.onclick = prevPromoSlide;
+trendingBtnRight.onclick = nextTrendingSlide;
+trendingBtnLeft.onclick = prevTrendingSlide;
