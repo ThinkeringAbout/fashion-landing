@@ -139,8 +139,10 @@ button {
     font-family: 'Lato';
     width: 60%;
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
     opacity: 0.8;
+    line-height: 20.8px;
+    letter-spacing: 2%;
 }
 
 img {
@@ -217,7 +219,97 @@ img {
     opacity: 1;
 }
 
+.promo__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 100px;
+    padding-bottom: 15px;
+    height: 538px;
+}
+
+h2 {
+    font-family: 'Lato';
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 32px;
+    letter-spacing: 2%;
+}
+
+.promo-slider {
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    transition: all ease 1s;
+    right: 0px;
+}
+
+.promo_slider_line {
+    height: 232px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    right: 0;
+    top: 0;
+    transition: all ease 1s;
+    align-items: center;
+}
+
+.promo_slider_line img {
+    height: 232px;
+    width: 232px;
+    opacity: 1;
+}
+
+.promo-slider-btns {
+    margin-top: 15px;
+    display: flex;
+    width: 216px;
+    justify-content: space-between;
+}
+
+.promo-btn {
+    height: 24px;
+    width: 24px;
+    background-color: #fff;
+    border-color: var(--primary-text-color);
+}
+
+.slider-conditions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1 1 auto;
+}
+
+.condition {
+    width: 8px;
+    height: 8px;
+    border: 1px solid var(--primary-text-color);
+    border-radius: 50%;
+}
+
+.condition-active {
+    background-color: var(--primary-text-color);
+}
+
 /* MEDIA */
+
+@media (max-width: 1200px) {
+    .promo_slider_line img {
+        height: 170px;
+        width: 170px;
+    }
+    .promo-slider {
+        width: 900px;
+    }
+
+}
 
 @media (max-width: 1050px) {
     .start-slider {
@@ -225,6 +317,16 @@ img {
     }
     .bg-img img {
         left: 750px;
+    }
+}
+
+@media (max-width: 920px) {
+    .promo_slider_line img {
+        height: 115px;
+        width: 115px;
+    }
+    .promo-slider {
+        width: 600px;
     }
 }
 
@@ -250,6 +352,19 @@ img {
     }
     header nav {
         width: 80%;
+    }
+}
+
+@media (max-width: 620px) {
+    .promo_slider_line img {
+        height: 70px;
+        width: 70px;
+    }
+    .promo-slider {
+        width: 400px;
+    }
+    .promo_slider_line {
+        height: 70px;
     }
 }
 
