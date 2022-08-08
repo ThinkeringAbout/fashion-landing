@@ -536,6 +536,26 @@ h2 {
     opacity: 0.8;
 }
 
+.social-media {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-media i {
+    color: #fff;
+    opacity: 0.8;
+}
+
+.brand {
+    background-color: #232A40;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* MEDIA */
 
 @media (max-width: 1200px) {
