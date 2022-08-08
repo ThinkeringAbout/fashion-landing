@@ -18,6 +18,35 @@ let trendingBtnRight = document.querySelector('.trending-right');
 let trendingOffset = 0;
 let trendingIndicationsIndex = 0;
 
+let showMoreBtn = document.querySelector('.show-more-btn');
+let categoriesList = document.querySelector('.categories-images');
+
+function showLess () {
+    showMoreBtn.onclick = null;
+    categoriesList.style.height = 920 + 'px';
+    setTimeout(function() {
+        showMoreBtn.scrollIntoView({
+            behavior: 'smooth'
+        });
+        showMoreBtn.onclick = showMore;
+        showMoreBtn.innerHTML = "More Categories";
+    }, 10);
+}
+
+function showMore () {
+    showMoreBtn.onclick = null;
+    categoriesList.style.height = 'fit-content';
+    setTimeout(function() {
+        showMoreBtn.scrollIntoView({
+            behavior: 'smooth'
+        });
+        showMoreBtn.onclick = showLess;
+        showMoreBtn.innerHTML = "Less Categories";
+    }, 100);
+}
+
+showMoreBtn.onclick = showMore;
+
 function nextTrendingSlide () {
     let x = document.querySelector('.trending-img').width * 3 + 30;
     if (trendingOffset < x * 3 + 1) {
